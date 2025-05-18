@@ -23,12 +23,12 @@ let aqi = 187;
 
 async function fetchSensorData() {
   try {
-    const response = await fetch("https://198.161.xxx.xxx/sensor"); //yaha change krna h ip address --------------->>>
+    const response = await fetch("https://68248f670f0188d7e729cd73.mockapi.io/sensor/data"); //yaha change krna h ip address --------------->>>
     const data = await response.json();
-
-    temperature = data.temperature;
-    humidity = data.humidity;
-    air_quality = data.air_quality;
+    //[0] bcoz the data is from array....
+    temperature = data[0].temperature;
+    humidity = data[0].humidity;
+    air_quality = data[0].air_quality;
     aqi = air_quality;
 
     document.getElementById("temperature").textContent = `${temperature} °C`;
@@ -61,16 +61,6 @@ async function fetchSensorData() {
     } else if (temperature < 20 && humidity < 30) {
       comfort = "Cold & Dry";
     }
-
-    let weather = "Normal";
-    if (humidity > 80 && temperature < 25) weather = "Humid";
-    else if (temperature > 30) weather = "Hot";
-    else if (temperature < 15) weather = "Cold";
-
-    let airStatus = "Unknown";
-    if (air_quality < 300) airStatus = "Good";
-    else if (air_quality < 600) airStatus = "Moderate";
-    else airStatus = "Poor";
 
     const T = temperature;
     const RH = humidity;
@@ -188,5 +178,5 @@ async function fetchSensorData() {
   }
 }
 
-setInterval(fetchSensorData, 3000);
+setInterval(fetchSensorData, 5000);
 fetchSensorData();
