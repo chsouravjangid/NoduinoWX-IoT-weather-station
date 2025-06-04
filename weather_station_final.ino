@@ -427,7 +427,7 @@ void handleRoot() {
 
   html += "</main>";
 
-  html += "<footer><p>Made with <span>&hearts;</span> by <a href='https://github.com/fSocietyDeveloper' target='_blank'>fSociety Developer</a></p><div class='footer-links'><a href='/donate'>Support Us</a><a href='https://github.com/fSocietyDeveloper/esp8266-weather-station' target='_blank'>GitHub</a></div></footer>";
+  html += "<footer><p>Made with <span>&hearts;</span> by <a href='https://github.com/chsouravjangid' target='_blank'>Sourav Jangid</a></p><div class='footer-links'><a href='/donate'>Support Us</a><a href='https://github.com/chsouravjangid/esp8266-weather-station' target='_blank'>GitHub</a></div></footer>";
 
   html += "</div>";
 
